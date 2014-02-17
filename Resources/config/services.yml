@@ -1,0 +1,8 @@
+parameters:
+  yjv.validator_constraint_group.group_factory.class: Yjv\ValidatorConstraintGroup\GroupFactory
+  yjv.validator_constraint_group.yaml_group_loader.class: Yjv\ValidatorConstraintGroup\YamlGroupLoader
+
+services:
+  
+  yjv.validator_constraint_group.group_factory:
+    class: %yjv.validator_constraint_group.group_factory.class%
