@@ -1,6 +1,6 @@
 <?php
 
-namespace Yjv\Bundle\ReportRenderingBundle;
+namespace Yjv\Bundle\ValidatorConstraintGroupBundle;
 
 use Yjv\Bundle\ReportRenderingBundle\DependencyInjection\Compiler\AddDataTransformersPass;
 

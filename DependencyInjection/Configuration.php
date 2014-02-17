@@ -1,6 +1,6 @@
 <?php
 
-namespace Yjv\Bundle\ReportRenderingBundle\DependencyInjection;
+namespace Yjv\Bundle\ValidatorConstraintGroupBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

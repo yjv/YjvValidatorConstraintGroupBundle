@@ -1,13 +1,10 @@
 <?php
 
-namespace Yjv\Bundle\ReportRenderingBundle\DependencyInjection;
+namespace Yjv\Bundle\ValidatorConstraintGroupBundle\DependencyInjection;
 
 use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
-
-use Symfony\Component\DependencyInjection\DefinitionDecorator;
-
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -39,7 +36,10 @@ class YjvValidatorConstraintGroupExtension extends Extension
 
                 $loaderId = sprintf('yjv.validator_constraint_group.group_factory.loader.%s', $name);
                 $loader = new Definition();
-                $loader->setArguments(array(realpath($file)));
+                $loader
+                    ->setClass($container->getParameter('yjv.validator_constraint_group.yaml_group_loader.class'))
+                    ->setArguments(array(realpath($file)))
+                ;
                 $container->setDefinition($loaderId, $loader);
                 $container->getDefinition('yjv.validator_constraint_group.group_factory')
                     ->addMethodCall('addLoader', array(new Reference($loaderId)))
